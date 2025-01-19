@@ -1,0 +1,23 @@
+00000000000100b0 <main>:
+100b0: 00028537        lui    a0, 0x2b
+100b4: fdd10113        addi   sp, sp, -48
+100b8: 09050513       addi   a0, a0, -880 # 2ac90 <_clzdi2+0x44>
+100bc: 02113423       sd     ra, 40(sp)
+100c0: 02913023       sd     s1, 24(sp)
+100c4: 02813023       sd     s0, 32(sp)
+100c8: 4cc000ef         jal    ra, 10598 <printf>
+100cc: 00028537        lui    a0, 0x2b
+100d0: 06c10593       addi   a1, sp, 12
+100d4: 510000ef        jal    ra, 105ec <scanf>
+100d8: 09012483       lw     s1, 12(sp)
+100dc: 00500793       li     a5, 5
+100e0: 40195713       srl    a4, a2, 1
+100e4: 04974463       bgeu   a4, a5, 10138 <main+0x88>
+100e8: 00100793       li     a5, 1
+100ec: 04978463       beqz   a4, 10140 <main+0x90>
+100f0: 4019591b       sraiw  s4, a2, 0x1
+100f4: 00200413       li     s0, 2
+100f8: 0fc0006f         j      10104 <main+0x54>
+100fc: afc000ef         jal    ra, 10304 <_moddi3>
+10100: 0905051b     sext.w a0, a0
+10104: 02050863     beqz   a0, 10140 <main+0x90>

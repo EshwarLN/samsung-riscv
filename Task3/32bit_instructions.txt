@@ -1,0 +1,269 @@
+1. Instruction: lui a0, 0x2b
+-Operation: Load an upper immediate value into register a0.  
+  a0 = 0x2b << 12 (sets a0 to 0x2b000).
+- Encoding:  
+  - Opcode: 0110111 (LUI)  
+  - Immediate (upper 20 bits): 0x2b → 0000000000001011  
+  - Register (rd): 01010 (a0)  
+  - Full Encoding (binary): 0000000000001011010100110111  
+  - Hexadecimal: 0x02b00037
+
+- Explanation: This instruction initializes the a0 register with a large constant for later use. It’s typically used for address calculations or setting high-order bits.
+
+2. Instruction: addi sp, sp, -48
+- Operation: Add an immediate value to sp (stack pointer).  
+  sp = sp + (-48) (decreases sp by 48 bytes to allocate stack space for local variables).
+- Encoding:  
+  - Opcode: 0010011 (ADDI)  
+  - Immediate: -48 → 111111110100 (12-bit signed)  
+  - Source Register (rs1): 00010 (sp)  
+  - Destination Register (rd): 00010 (sp)  
+  - Full Encoding (binary): 1111111101000001000000100010011  
+  - Hexadecimal: 0xfc101013
+
+- Explanation: This instruction adjusts the stack pointer (sp) to create space for local variables during function calls. It's vital for managing function frames.
+
+3. Instruction: call 2ac90 <__clzdi2+0x44>
+- Operation: Jump to the address 2ac90 (absolute offset). Saves the return address in the ra (x1) register.
+- Encoding:  
+  - Opcode: 1101111 (JAL)  
+  - Immediate: Encodes the offset from the current program counter (100b8).  
+  - Register (rd): 00001 (ra)  
+  - Offset (split into fields): Calculated based on PC-relative addressing.  
+  - Full Encoding: Calculated during compilation.  
+- Explanation: This is a subroutine call that jumps to the function __clzdi2. The return address is stored in ra for later resumption.
+
+4. Instruction: sd a0, 32(sp)
+- Operation: Store the value of register a0 at memory address sp + 32.  
+  - Memory[sp + 32] = a0
+- Encoding:  
+  - Opcode: 0100011 (SD)  
+  - Funct3: 011  
+  - Immediate: 32 split into imm[11:5] = 0000010 and imm[4:0] = 00000.  
+  - rs1: 00010 (sp), rs2: 01010 (a0).  
+  - Full Encoding (binary): 0000010010100001001100000100011  
+  - Hexadecimal: 0x0201a023
+
+- Explanation: This stores a0 in the stack at offset 32. It's typically used to save registers during function calls.
+
+5. Instruction: sd ra, 40(sp)
+- Operation: Store the value of register ra (return address) at memory address sp + 40.  
+  - Memory[sp + 40] = ra
+- Encoding:  
+  - Opcode: 0100011 (SD)  
+  - Funct3: 011  
+  - Immediate: 40 split into imm[11:5] = 0000010 and imm[4:0] = 01000.  
+  - rs1: 00010 (sp), rs2: 00001 (ra).  
+  - Full Encoding (binary): 0000010000010001001101000100011  
+  - Hexadecimal: 0x02812023
+
+- Explanation: This instruction saves the return address (ra) in the stack, ensuring the subroutine can later return to the calling function.
+
+6. Instruction: jal ra, 10308 <printf>
+- Operation: Jump to the address 10308 (absolute offset). Saves the return address in the ra (x1) register.
+- Encoding:  
+  - Opcode: 1101111 (JAL)  
+  - Immediate: Encodes the offset from the current program counter (100c4).  
+  - Register (rd): 00001 (ra).  
+  - Offset (split into fields): Calculated based on PC-relative addressing.  
+  - Full Encoding: Calculated during compilation.  
+- Explanation: This is a function call to printf. The return address is saved in ra for the program to continue execution after the function.
+
+7. Instruction: addi a0, sp, -40
+- Operation: Add an immediate value to sp and store the result in a0.  
+  a0 = sp + (-40)
+- Encoding:  
+  - Opcode: 0010011 (ADDI)  
+  - Immediate: -40 → 111111101000 (12-bit signed)  
+  - rs1: 00010 (sp), rd: 01010 (a0).  
+  - Full Encoding (binary): 1111111010000001000001010010011  
+  - Hexadecimal: 0xf801013
+
+- Explanation: This calculates the address of a local variable or data in the stack. It’s used for parameter passing or temporary storage.
+
+8. Instruction: call 2ac80 <__clzdi2+0x54>
+- Operation: Jump to the address 2ac80. Saves the return address in the ra (x1) register.
+- Encoding:  
+  - Opcode: 1101111 (JAL)  
+  - Immediate: Encodes the offset from the current program counter (100cc).  
+  - Register (rd): 00001 (ra).  
+  - Offset (split into fields): Calculated during compilation.  
+  - Full Encoding: Calculated during compilation.  
+- Explanation: Calls a function (__clzdi2) and saves the return address in ra.
+
+9. Instruction: li a5, 0xff
+- Operation: Load the immediate value 0xff into register a5.  
+  a5 = 0xff  
+  (Pseudo-instruction translated to addi a5, x0, 0xff).
+- Encoding:  
+  - Opcode: 0010011 (ADDI)  
+  - Immediate: 0xff → 000000111111 (12-bit).  
+  - rs1: 00000 (x0), rd: 01101 (a5).  
+  - Full Encoding (binary): 00000011111100000000011010010011  
+  - Hexadecimal: 0x0ff00613
+
+- Explanation: Loads a constant into a5 for use in calculations or conditions.
+
+10. Instruction: andi a5, a5, 0xff
+- Operation: Perform a bitwise AND between a5 and the immediate 0xff.  
+  a5 = a5 & 0xff
+- Encoding:  
+  - Opcode: 0010011 (ANDI)  
+  - Immediate: 0xff → 0000000011111111 (12-bit).  
+  - rs1: 01101 (a5), rd: 01101 (a5).  
+  - Full Encoding (binary): 0000000011111111011010110010011  
+  - Hexadecimal: 0x0ff6b613
+
+- Explanation: Ensures that only the lowest 8 bits of a5 are preserved. Commonly used for masking operations or limiting values to a specific range.
+11. Instruction: bne a5, zero, 10138 <main+0x88>
+- Operation: Branch to 10138 if a5 != 0.  
+  If a5 is non-zero, execution jumps to the specified address.
+- Encoding:  
+  - Opcode: 1100011 (BNE)  
+  - Funct3: 001  
+  - rs1: 01101 (a5), rs2: 00000 (zero).  
+  - Offset: Calculated as (10138 - current PC) → Encoded as split immediate fields.  
+  - Full Encoding: Calculated during compilation.  
+- Explanation: This conditional branch is used to implement loops or decision-making based on a condition.
+
+12. Instruction: addiw a0, a0, 10
+- Operation: Add the immediate 10 to the lower 32 bits of a0 and sign-extend to 64 bits.  
+  a0 = SignExtend((a0 + 10) & 0xFFFFFFFF)
+- Encoding:  
+  - Opcode: 0011011 (ADDIW)  
+  - Immediate: 10 → 000000001010.  
+  - rs1: 01010 (a0), rd: 01010 (a0).  
+  - Full Encoding (binary): 0000000010100101000001011010011  
+  - Hexadecimal: 0x00a5051b
+
+- Explanation: Updates a0 by adding 10, useful for incrementing 32-bit values or performing arithmetic operations in a loop.
+
+13. Instruction: jal ra, 10104 <main+0x58>
+- Operation: Jump to the address 10104 and save the return address in ra (x1).  
+- Encoding:  
+  - Opcode: 1101111 (JAL)  
+  - rd: 00001 (ra).  
+  - Immediate: Encodes the offset from the current PC (10124).  
+  - Full Encoding: Calculated during compilation.  
+- Explanation: This instruction enables the program to call a subroutine and continue execution after it returns.
+
+14. Instruction: sd a5, 24(sp)
+- Operation: Store the value of register a5 at memory address sp + 24.  
+  - Memory[sp + 24] = a5
+- Encoding:  
+  - Opcode: 0100011 (SD)  
+  - Funct3: 011  
+  - Immediate: 24 split into imm[11:5] = 0000011 and imm[4:0] = 11000.  
+  - rs1: 00010 (sp), rs2: 01101 (a5).  
+  - Full Encoding (binary): 0000011011010001100110000100011  
+  - Hexadecimal: 0x0181b023
+
+- Explanation: Saves the contents of a5 in the stack for later use, such as preserving a variable during a function call.
+
+15. Instruction: lui t1, 0x2
+- Operation: Load an upper immediate value into register t1.  
+  t1 = 0x2 << 12 (sets t1 to 0x2000).
+- Encoding:  
+  - Opcode: 0110111 (LUI)  
+  - Immediate: 0x2 → 0000000000000010.  
+  - rd: 01011 (t1).  
+  - Full Encoding (binary): 0000000000000010010110110111  
+  - Hexadecimal: 0x002b0037
+
+- Explanation: Loads a high constant value (0x2000) into t1, often used for addressing or large constant initialization.
+
+16. Instruction: addi t1, t1, 15 
+- Operation: Add an immediate value 15 to t1.  
+  t1 = t1 + 15
+- Encoding:  
+  - Opcode: 0010011 (ADDI)  
+  - Immediate: 15 → 0000000001111.  
+  - rs1: 01011 (t1), rd: 01011 (t1).  
+  - Full Encoding (binary): 000000000111101011010010010011  
+  - Hexadecimal: 0x00f2b013
+
+- Explanation: This increments the value in t1 by 15. Such operations are commonly used for indexing or address calculations.
+
+17. Instruction: srli t1, t1, 2 
+- Operation: Shift the value in t1 right by 2 positions, filling with zeros.  
+  t1 = t1 >> 2
+- Encoding:  
+  - Opcode: 0010011 (SRLI)  
+  - Funct3: 101  
+  - Immediate (shamt): 2 → 00000000010.  
+  - rs1: 01011 (t1), rd: 01011 (t1).  
+  - Full Encoding (binary): 00000000001010101101010110011  
+  - Hexadecimal: 0x0022b093
+
+- Explanation: Performs a logical right shift by 2 bits, effectively dividing t1 by 4. This is commonly used in address alignment or reducing values.
+
+18. Instruction: sd t1, 16(sp)  
+-Operation: Store the value of t1 at the memory address sp + 16.  
+  - Memory[sp + 16] = t1
+- Encoding:  
+  - Opcode: 0100011 (SD)  
+  - Funct3: 011  
+  - Immediate: 16 split into imm[11:5] = 0000001 and imm[4:0] = 00000.  
+  - rs1: 00010 (sp), rs2: 01011 (t1).  
+  - Full Encoding (binary): 0000010101100010001100000100011  
+  - Hexadecimal: 0x0102b023
+
+- Explanation: This saves the current value of t1 onto the stack for later use. Storing registers is vital for preserving data across function calls.
+
+19. Instruction: addi a5, sp, 8 
+- Operation: Add an immediate value 8 to sp and store the result in a5.  
+  a5 = sp + 8
+-Encoding:  
+  - Opcode: 0010011 (ADDI)  
+  - Immediate: 8 → 000000001000.  
+  - rs1: 00010 (sp), rd: 01101 (a5).  
+  - Full Encoding (binary): 00000000100000101000011010010011  
+  - Hexadecimal: 0x0081b513
+
+- Explanation: This computes an offset address in the stack and places it in a5. It's often used for accessing specific stack locations or local variables.
+
+20. Instruction: jal ra, 10108 <main+0x74>  
+-Operation: Jump to the address 10108 and save the return address in ra.  
+- Encoding:  
+  - Opcode: 1101111 (JAL)  
+  - rd: 00001 (ra).  
+  - Immediate: Encodes the offset from the current PC (10120).  
+  - Full Encoding: Calculated during compilation.  
+- Explanation: This performs a subroutine call to a specific address and saves the return address in ra.
+
+21. Instruction: li a1, 5 
+- Operation: Load the immediate value 5 into a1.  
+  a1 = 5  
+  (Pseudo-instruction equivalent to addi a1, x0, 5).
+- Encoding:  
+  - Opcode: 0010011 (ADDI)  
+  - Immediate: 5 → 00000000101.  
+  - rs1: 00000 (x0), rd: 00011 (a1).  
+  - Full Encoding (binary): 00000000101000000000001110010011  
+  - Hexadecimal: 0x00500313
+
+- Explanation: This initializes a1 with the constant 5. It’s commonly used to set up function arguments or constants.
+
+---
+
+22. Instruction: addi a5, a1, -1  
+- Operation: Subtract 1 from a1 and store the result in a5.  
+  a5 = a1 - 1
+- Encoding:  
+  - Opcode: 0010011 (ADDI)  
+  - Immediate: -1 → 111111111111 (12-bit signed).  
+  - rs1: 00011 (a1), rd: 01101 (a5).  
+  - Full Encoding (binary): 11111111111100110000011010010011  
+  - Hexadecimal: 0xfff31613
+
+- Explanation: Performs a subtraction by adding -1 to a1, storing the result in a5. It’s often used in loops or decrementing counters.
+
+23. Instruction: beqz a5, 10140 <main+0x90>  
+- Operation: Branch to 10140 if a5 == 0.  
+- Encoding:  
+  - Opcode: 1100011 (BEQ)  
+  - Funct3: 000  
+  - rs1: 01101 (a5), rs2: 00000 (zero).  
+  - Offset: Calculated as (10140 - current PC).  
+  - Full Encoding: Calculated during compilation.  
+- Explanation: This conditional branch checks if a5 is zero and jumps to the specified location. It’s useful for breaking out of loops or branching in conditional structures.
