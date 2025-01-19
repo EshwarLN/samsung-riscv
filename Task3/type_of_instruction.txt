@@ -1,0 +1,69 @@
+1. ui a0, 0x2b
+   - Type: U-type(Load Upper Immediate)
+
+2. addi sp, sp, -48
+   - Type: I-type (Immediate)
+
+3. call 2ac90 <__clzdi2+0x44> 
+   - Type: J-type(Jump)
+
+4. sd a0, 32(sp)  
+   - Type: S-type (Store)
+
+5. sd ra, 40(sp)  
+   - Type: S-type (Store)
+
+6. jal ra, 10308 <printf> 
+   - Type: J-type (Jump)
+
+7. addi a0, sp, -40 
+   - Type: I-type(Immediate)
+
+8. call 2ac80 <__clzdi2+0x54>  
+   - Type: J-type (Jump)
+
+9. li a5, 0xff  
+   - Type: I-type (Immediate, Pseudo-instruction)
+
+10. andi a5, a5, 0xff
+    - Type: I-type (Immediate)
+
+11. bne a5, zero, 10138 <main+0x88>  
+    - Type: B-type (Branch)
+
+12. addiw a0, a0, 10  
+    - Type: I-type(Immediate, Word Arithmetic)
+
+13. jal ra, 10104 <main+0x58>  
+    - Type: J-type (Jump)
+
+14. sd a5, 24(sp) 
+    - Type: S-type (Store)
+
+15. lui t1, 0x2  
+    - Type: U-type (Load Upper Immediate)
+
+16. addi t1, t1, 15  
+    - Type: I-type(Immediate)
+
+17. srli t1, t1, 2
+    - Type: I-type (Immediate, Shift)
+
+18. sd t1, 16(sp)  
+    - Type: S-type (Store)
+
+19. addi a5, sp, 8  
+    - Type: I-type (Immediate)
+
+20. jal ra, 10108 <main+0x74>  
+    - Type: J-type(Jump)
+
+21. li a1, 5  
+    - Type: I-type(Immediate, Pseudo-instruction)
+
+22. addi a5, a1, -1  
+    - Type: I-type (Immediate)
+
+23. beqz a5, 10140 <main+0x90>  
+    - Type: B-type (Branch, Zero Comparison)
+
