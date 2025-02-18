@@ -124,15 +124,35 @@ The goal of this task is to *simulate a RISC-V Core Verilog netlist* using a tes
 </details>
 
 <details>
-  <summary>Task 5 and Task 6</summary>
+  <summary>Task 5 </summary>
 
-This task is to add the project name with a brief overview and components required with working video.
+Blinking the Built-in LED on VSDSquadron Mini  
+
+## Overview  
+In this task, I learned about the VSDSquadron Mini (CH32V003F4U6) board and wrote a simple program to blink the built-in LED.  
+
+## Steps Followed  
+1. Set up VS Code with the VSDSquadron toolchain.  
+2. Identified that the built-in LED is connected to PC13.  
+3. Wrote a C program to toggle the LED with a 500ms delay.  
+4. Compiled and uploaded the code
 
 </details>
 
+<details>
+  <summary>Task 5 </summary>
 
+  7-Segment Display with VSDSquadron Mini  
 
+##  Overview  
+In this task, I connected a 7-segment display to the VSDSquadron Mini (CH32V003F4U6) and programmed it to show the numbers 1, 3, and 7, each for 3 seconds.  
 
+##  Connections  
+- VSDSquadron Mini GPIOs are connected to the segments (A-G, DP) of the 7-segment display.  
+- A current-limiting resistor (220Ω) is used for each segment.  
+- The common cathode is connected to GND.
+
+</details>
 
 
 
