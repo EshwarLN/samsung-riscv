@@ -6,7 +6,7 @@ College : Dayananda Sagar College of Engineering
 Email : eshwarfeb119@gmail.com 
 
 <details>
-  <summary>Task 1</summary>
+  <summary>**Task 1** : The given task is to install RISC V toolchain using VDI link by following the steps mentioned in the shared pdf and compile a simple C program referring the lab video</summary>
 This task focuses on setting up a GitHub repository named *samsung-riscv*, installing the RISC-V toolchain, and completing hands-on exercises based on the provided lab videos. The objective is to help participants gain familiarity with the RISC-V architecture, its toolchain, and the process of executing programs written in C and RISC-V.  
 
 ## steps to complete the task
@@ -23,7 +23,7 @@ This task focuses on setting up a GitHub repository named *samsung-riscv*, insta
 </details>
 
 <details>
-  <summary>Task 2</summary>
+  <summary>**Task 2** : This task is to compile a new simple C program and collect the RISC V object dunp using both -O1 and -Ofast</summary>
  This task focuses on SPIKE Simulation, compiler optimizations, and analyzing RISC-V object dumps. The goal is to explore how different compiler optimization levels impact the generated machine code and execution performance.  
 
 ## steps to complete the task
@@ -43,7 +43,7 @@ This task focuses on setting up a GitHub repository named *samsung-riscv*, insta
 </details>
 
 <details>
-  <summary>Task 3</summary>
+  <summary>**Task 3**: The task is to identify **15 unique RISC V instructions and determine the 32 bit instruction** code</summary>
 This task aims to enhance the understanding of RISC-V instruction formats by analyzing and decoding instructions from an application's riscv-objdump output.
 
 ## Steps to complete the task
@@ -105,7 +105,7 @@ o Encodes the offset to label in the immediate field, split into the specified 
 </details>
 
 <details>
-  <summary>Task 4</summary>
+  <summary>**Task 4**: The task 4 is to perform a functional simulation of the given RISC V Core Verilog netlist and testbench</summary>
 
 The goal of this task is to *simulate a RISC-V Core Verilog netlist* using a testbench to verify its functional correctness by analyzing output signals and waveforms.  
 
