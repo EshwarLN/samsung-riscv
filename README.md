@@ -6,16 +6,16 @@ College : Dayananda Sagar College of Engineering
 Email : eshwarfeb119@gmail.com 
 
 <details>
-  <summary>**Task 1** : The given task is to install RISC V toolchain using VDI link by following the steps mentioned in the shared pdf and compile a simple C program referring the lab video</summary>
+  <summary>Task 1 : The given task is to install RISC V toolchain using VDI link by following the steps mentioned in the shared pdf and compile a simple C program referring the lab video</summary>
 This task focuses on setting up a GitHub repository named *samsung-riscv*, installing the RISC-V toolchain, and completing hands-on exercises based on the provided lab videos. The objective is to help participants gain familiarity with the RISC-V architecture, its toolchain, and the process of executing programs written in C and RISC-V.  
 
-## steps to complete the task
+## Steps to complete the task
 - Watch the reference videos to understand the program workflow.  
 - Install the RISC-V toolchain using the provided VDI link.  
 - Follow the lab exercises and run them on a local system.  
 - Capture dated snapshots of the implementation and upload them to the GitHub repository.
 
-  ### image
+  ### Image
 ![image alt](https://github.com/user-attachments/assets/06b57407-d9f6-401d-9570-a9cb0e9519b3)
 ![image alt](https://github.com/user-attachments/assets/a561749f-c288-416f-9ba9-caef6376bde0)
 ![image alt](https://github.com/user-attachments/assets/44174925-71a2-40e0-a236-24d14e280b03)
@@ -23,10 +23,10 @@ This task focuses on setting up a GitHub repository named *samsung-riscv*, insta
 </details>
 
 <details>
-  <summary>**Task 2** : This task is to compile a new simple C program and collect the RISC V object dunp using both -O1 and -Ofast</summary>
+  <summary>Task 2: This task is to compile a new simple C program and collect the RISC V object dunp using both -O1 and -Ofast</summary>
  This task focuses on SPIKE Simulation, compiler optimizations, and analyzing RISC-V object dumps. The goal is to explore how different compiler optimization levels impact the generated machine code and execution performance.  
 
-## steps to complete the task
+## Steps to complete the task
 - Watch the SPIKE Simulation reference video to understand the workflow.  
 - Conduct simulation experiments using *-O1* and *-Ofast* optimization flags.  
 - Write a simple C program as a test case.  
@@ -34,8 +34,8 @@ This task focuses on setting up a GitHub repository named *samsung-riscv*, insta
 - Generate and examine the *RISC-V object dumps* for both *-O1* and *-Ofast*.  
 - Capture and upload snapshots of the compiled code and object dumps to the GitHub repository.
 
-  ### image
-  ![image alt](https://github.com/user-attachments/assets/78c346f8-6f94-4417-9f28-0078f875f730)
+  ### Image
+![image alt](https://github.com/user-attachments/assets/78c346f8-6f94-4417-9f28-0078f875f730)
 ![image alt](https://github.com/user-attachments/assets/d56b5eb7-58e9-4a7a-9e8e-3e23dbbb3276)
 ![image alt](https://github.com/user-attachments/assets/dfdb8adb-3d10-44ce-af36-47abeecb3aed)
   
@@ -43,7 +43,7 @@ This task focuses on setting up a GitHub repository named *samsung-riscv*, insta
 </details>
 
 <details>
-  <summary>**Task 3**: The task is to identify **15 unique RISC V instructions and determine the 32 bit instruction** code</summary>
+  <summary>Task 3: The task is to identify **15 unique RISC V instructions and determine the 32 bit instruction** code</summary>
 This task aims to enhance the understanding of RISC-V instruction formats by analyzing and decoding instructions from an application's riscv-objdump output.
 
 ## Steps to complete the task
@@ -53,7 +53,7 @@ This task aims to enhance the understanding of RISC-V instruction formats by ana
 - Determine the *32-bit binary representation* of each instruction based on its format.  
 - Upload the extracted instruction patterns to the GitHub repository.
 
-### instruction set
+### Instruction set
 1. I-Type Instructions 
 • Size: 12 bits. 
 • Placement: Bit positions 20–31. 
@@ -105,20 +105,20 @@ o Encodes the offset to label in the immediate field, split into the specified 
 </details>
 
 <details>
-  <summary>**Task 4**: The task 4 is to perform a functional simulation of the given RISC V Core Verilog netlist and testbench</summary>
+  <summary>Task 4: The task 4 is to perform a functional simulation of the given RISC V Core Verilog netlist and testbench</summary>
 
 The goal of this task is to *simulate a RISC-V Core Verilog netlist* using a testbench to verify its functional correctness by analyzing output signals and waveforms.  
 
 ## Steps to complete the task
 
-  - Download the required files, including the *Verilog netlist* and *testbench* for the RISC-V Core.  
+- Download the required files, including the *Verilog netlist* and *testbench* for the RISC-V Core.  
 - Configure the simulation environment using tools like *Icarus Verilog (iverilog)* and *GTKWave*.  
 - Execute the *functional simulation*, ensuring the core operates as expected.  
 - Monitor and verify the *output signals* to confirm correct execution.  
 - Capture and save waveform snapshots to examine the core’s behavior.  
 - Upload the simulation results, including waveforms, output logs, and descriptions, to the GitHub repository.
 
-### image
+### Image
 ![image alt](https://github.com/user-attachments/assets/08d944d1-f9f3-420b-8453-a99b81a3b286)
 ![image alt](https://github.com/user-attachments/assets/69481f98-895b-4028-91d6-2f71f67d9af8)
 </details>
