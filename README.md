@@ -124,9 +124,8 @@ The goal of this task is to *simulate a RISC-V Core Verilog netlist* using a tes
 </details>
 
 <details>
-  <summary>Task 5 </summary>
+  <summary>Task 5: Blinking the Built-in LED on VSDSquadron Mini   </summary>
 
-Blinking the Built-in LED on VSDSquadron Mini  
 
 ## Overview  
 In this task, I learned about the VSDSquadron Mini (CH32V003F4U6) board and wrote a simple program to blink the built-in LED.  
@@ -140,9 +139,8 @@ In this task, I learned about the VSDSquadron Mini (CH32V003F4U6) board and wrot
 </details>
 
 <details>
-  <summary>Task 6 </summary>
+  <summary>Task 6 : 7-Segment Display with VSDSquadron Mini   </summary>
 
-  7-Segment Display with VSDSquadron Mini  
 
 ##  Overview  
 In this task, I connected a 7-segment display to the VSDSquadron Mini (CH32V003F4U6) and programmed it to show the numbers 1, 3, and 7, each for 3 seconds.  
