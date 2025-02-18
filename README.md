@@ -1,38 +1,3 @@
-<details>
-  <summary>Task 1</summary>
-
-The given task is to install RISC-V toolchain using VDI link by following the steps mentioned in the shared pdf and compile a simple C program referring the lab video.
-
-</details>
-
-<details>
-  <summary>Task 2</summary>
-
-This task is to compile a new simple C program and collect the RISC-V object dump using both -O1 and -Ofast.
-
-</details>
-
-<details>
-  <summary>Task 3</summary>
-
-The third task is to identify **15 unique RISC-V instructions and determine the 32-bit instruction** code.
-
-</details>
-
-<details>
-  <summary>Task 4</summary>
-
-The task 4 is to perform a functional simulation of the given RISC-V Core Verilog netlist and testbench.
-
-</details>
-
-<details>
-  <summary>Task 5 and Task 6</summary>
-
-This task is to add the project name with a brief overview and components required with working video.
-
-</details>
-
 Samsung Semiconductor India Research, in collaboration with VLSI System Design (VSD), has launched the SAMSUNG-RISCV program. This intensive six-week training program focuses on semiconductor technologies and the RISC-V architecture. Designed to equip participants with advanced knowledge and skills, it aims to meet the demands of the fast-growing semiconductor industry. With a strong emphasis on RISC-V design and its open-source nature, the program provides an excellent opportunity to explore VLSI chip design and innovation in RISC-V technology.
 
 Basic Details
@@ -40,7 +5,8 @@ Name : Eshwar LN
 College : Dayananda Sagar College of Engineering
 Email : eshwarfeb119@gmail.com 
 
-# Task 1
+<details>
+  <summary>Task 1</summary>
 This task focuses on setting up a GitHub repository named *samsung-riscv*, installing the RISC-V toolchain, and completing hands-on exercises based on the provided lab videos. The objective is to help participants gain familiarity with the RISC-V architecture, its toolchain, and the process of executing programs written in C and RISC-V.  
 
 ## steps to complete the task
@@ -54,9 +20,11 @@ This task focuses on setting up a GitHub repository named *samsung-riscv*, insta
 ![image alt](https://github.com/user-attachments/assets/a561749f-c288-416f-9ba9-caef6376bde0)
 ![image alt](https://github.com/user-attachments/assets/44174925-71a2-40e0-a236-24d14e280b03)
 
+</details>
 
-# Task 2
-  This task focuses on SPIKE Simulation, compiler optimizations, and analyzing RISC-V object dumps. The goal is to explore how different compiler optimization levels impact the generated machine code and execution performance.  
+<details>
+  <summary>Task 2</summary>
+ This task focuses on SPIKE Simulation, compiler optimizations, and analyzing RISC-V object dumps. The goal is to explore how different compiler optimization levels impact the generated machine code and execution performance.  
 
 ## steps to complete the task
 - Watch the SPIKE Simulation reference video to understand the workflow.  
@@ -72,7 +40,10 @@ This task focuses on setting up a GitHub repository named *samsung-riscv*, insta
 ![image alt](https://github.com/user-attachments/assets/dfdb8adb-3d10-44ce-af36-47abeecb3aed)
   
 
-# Task 3
+</details>
+
+<details>
+  <summary>Task 3</summary>
 This task aims to enhance the understanding of RISC-V instruction formats by analyzing and decoding instructions from an application's riscv-objdump output.
 
 ## Steps to complete the task
@@ -129,7 +100,13 @@ o Bits 19–12 (imm[19:12]): Bit positions 12–19.
 • Example: jal x1, label 
 o Encodes the offset to label in the immediate field, split into the specified positions.
 
-# Task 4 
+
+
+</details>
+
+<details>
+  <summary>Task 4</summary>
+
 The goal of this task is to *simulate a RISC-V Core Verilog netlist* using a testbench to verify its functional correctness by analyzing output signals and waveforms.  
 
 ## Steps to complete the task
@@ -144,6 +121,20 @@ The goal of this task is to *simulate a RISC-V Core Verilog netlist* using a tes
 ### image
 ![image alt](https://github.com/user-attachments/assets/08d944d1-f9f3-420b-8453-a99b81a3b286)
 ![image alt](https://github.com/user-attachments/assets/69481f98-895b-4028-91d6-2f71f67d9af8)
+</details>
+
+<details>
+  <summary>Task 5 and Task 6</summary>
+
+This task is to add the project name with a brief overview and components required with working video.
+
+</details>
+
+
+
+
+
+
 
 
 
