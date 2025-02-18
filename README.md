@@ -140,7 +140,7 @@ In this task, I learned about the VSDSquadron Mini (CH32V003F4U6) board and wrot
 </details>
 
 <details>
-  <summary>Task 5 </summary>
+  <summary>Task 6 </summary>
 
   7-Segment Display with VSDSquadron Mini  
 
