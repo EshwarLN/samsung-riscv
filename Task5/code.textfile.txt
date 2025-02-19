@@ -1,0 +1,21 @@
+#include <ch32v00x.h>
+
+void delay_ms(uint32_t ms) {
+    for (uint32_t i = 0; i < (ms * 800); i++) {
+        __asm__("nop");
+    }
+}
+
+int main(void) {
+    // Enable clock for GPIOC
+    RCC->APB2PCENR |= RCC_APB2Periph_GPIOC;
+
+    // Set PC13 as output
+    GPIOC->CFGLR &= ~(0xF << (13 * 4));  // Clear previous settings for PC13
+    GPIOC->CFGLR |= (0x3 << (13 * 4));   // Set PC13 as general-purpose push-pull output
+
+    while (1) {
+        GPIOC->OUTDR ^= (1 << 13);  // Toggle PC13 (LED ON/OFF)
+        delay_ms(500);              // Delay 500ms
+    }
+}
